@@ -33,7 +33,7 @@ function adding1() {
     let listitems = document.getElementById('orderlist');
     if (text.value != '') {
         let makeli = document.createElement('li');
-        makeli.innerHTML = '<div>' + text.value + ' ' + '<span style="cursor:pointer">\u00D7</span> </div>';
+        makeli.innerHTML = '<div>' + text.value + ' ' +       '<span style="cursor:pointer">\u00D7</span> </div>';
 
         listitems.appendChild(makeli);
         text.value = '';
@@ -50,3 +50,9 @@ function clearall() {
     listitems.innerHTML = '';
     text.value = '';
 }
+
+$(document).keyup(function(event) {
+    if (event.which === 13) {
+        adding1()
+    }
+});
